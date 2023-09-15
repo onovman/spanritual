@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Spanritual - The best funeral services at the top prices!</title>
+	<link rel="icon" type="image/png" href="./assets/img/favicon.png" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<script defer src="assets/js/plugins/intersect.min.js"></script>
+	<script defer src="assets/js/alpine.min.js"></script>
+</head>
+<body class="font-ptsans bg-deadlight" :class="stacked ? 'overflow-hidden' : 'overflow-auto'" x-data="{stacked: false}">
+	<header class="header w-full bg-no-repeat" style="background: #F2F6F9 url(./assets/img/clouds.jpg) 0px -193px;">
+		<div class="container">
+			<div class="flex justify-between semi:justify-center">
+				<div class="basis-1/3 flex flex-col justify-center regular:hidden">
+					<div>
+						<p class="text-large">Ritual services in Moscow and Moscow region</p>
+						<a href="/" class="linky">What to do if a person dies</a>
+						<div class="my-5">
+							<select class="p-3" name="gorod_select" id="gorod_select" @change="location.href = $el.value">
+								<option value="#">Moscow</option>
+								<option value="#">Balashikha</option>
+								<option value="#">Dolgoprudny</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="basis-1/3 flex flex-col justify-center regular:basis-1/2 semi:basis-auto">
+					<a href="/" class="w-[270px] my-5 regular:w-auto flex justify-center"><img src="./assets/img/logo.png" alt=""></a>
+				</div>
+				<div class="basis-1/3 flex flex-col justify-center regular:basis-1/2 semi:hidden">
+					<div class="text-right">
+						<p class="text-semi">HOTLINE</p>
+						<a href="tel:4957998378" class="hover:underline"><span class="text-big">(495) 799-8378</span></a>
+						<p>Call for a funeral agent ROUND THE CLOCK</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="menu" x-data="{sticky: false}">
+			<div x-intersect:enter="sticky = false" x-intersect:leave="sticky = true"></div>
+			<div :class="sticky ? 'w-full fixed top-0 z-[100000]' : 'container'">
+				<div class="transition-all duration-200 ease-in-out" :class="sticky ? 'bg-primary' : 'bg-primarya'">
+					<div class="w-full flex justify-between" :class="sticky ? 'container' : ''">
+						<div x-data="{
+							openMenu: false,
+
+							touches: {
+								xDown: null,
+								yDown: null,
+								xDiff: null,
+    							yDiff: null
+							},
+							handleTouchStart: function(evt){
+								this.touches.xDown = evt.touches[0].clientX;                                      
+						    	this.touches.yDown = evt.touches[0].clientY;
+							},
+							handleTouchMove: function(evt){
+								if(!this.touches.xDown || !this.touches.yDown){
+						            return;
+						        }
+
+						        let xUp = evt.touches[0].clientX;                                    
+						        let yUp = evt.touches[0].clientY;
+
+						        this.touches.xDiff = this.touches.xDown - xUp;
+						        this.touches.yDiff = this.touches.yDown - yUp;
+							},
+							handleTouchEnd: function(){
+						        if(Math.abs(this.touches.xDiff) > Math.abs(this.touches.yDiff)){
+						            if(this.touches.xDiff > 100){
+						                this.openMenu = false;
+						                stacked = false;
+						            }
+						            else if(this.touches.xDiff < -100){
+						                this.openMenu = true;
+						                stacked = true;
+						            }
+						        }
+						    },
+						}" 
+						@touchstart.window="handleTouchStart($event);"
+						@touchmove.window="handleTouchMove($event);" 
+						@touchend.window="handleTouchEnd($event);"
+						class="flex relative">
+							<div class="hidden w-[60px] justify-end items-center regular:flex" @click="openMenu = true; stacked = true;">
+								<div class="w-[30px] flex flex-col relative">
+									<span class="w-full bg-white h-[3px] mb-[5px] transition-all" :class="openMenu ? 'absolute top-1/2 -translate-y-1/2 rotate-45' : ''"></span>
+									<span class="w-full bg-white h-[3px] mb-[5px]" :class="openMenu ? 'hidden' : ''"></span>
+									<span class="w-full bg-white h-[3px] transition-all" :class="openMenu ? '-rotate-45 absolute bottom-1/2' : ''"></span>
+								</div>
+							</div>
+							<div class="fixed top-0 left-0 right-0 bottom-0 bg-white z-[10000] overflow-y-auto overflow-x-hidden" x-show="openMenu" 
+
+							x-transition:enter="transition ease-out duration-300"
+					        x-transition:enter-start="opacity-50 -translate-x-full"
+					        x-transition:enter-end="opacity-100 translate-x-0"
+					        x-transition:leave="transition ease-in duration-300"
+					        x-transition:leave-start="opacity-100 translate-x-0"
+					        x-transition:leave-end="opacity-50 -translate-x-full"
+
+							x-cloak>
+								<div class="container pb-[50px]">
+									<button type="button" @click.prevent="openMenu = false; stacked = false;">
+										<span class="block absolute right-5 top-5 w-[45px] h-[45px] small:w-[40px] small:h-[40px]">
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px;}</style></defs><title/><g id="cross"><line class="cls-1" x1="7" x2="25" y1="7" y2="25"/><line class="cls-1" x1="7" x2="25" y1="25" y2="7"/></g></svg>	
+										</span>
+									</button>
+									<p class="text-big font-bold uppercase text-center py-10 text-gray">Menu</p>
+									<ul class="flex flex-col">
+										<li class="p-5"><a href="#" class="text-large uppercase underline">Home</a></li>
+										<li class="p-5">
+											<a href="#" class="text-large uppercase underline">Services and prices</a>
+											<div class="flex flex-col pl-[10%] small:pl-0 small:pt-5">
+												<div class="my-5 small:my-1">
+													<a href="#" class="text-semi border-b-[1px] border-b-slate py-[4px] px-[15px] small:py-2 small:px-[5px] font-bold">Essential services</a>
+													<ul class="flex flex-col mt-5 small:mt-1 min-w-[270px]">
+														<li class="py-[4px] px-[15px] small:px-[5px]"><a href="#" class="text-semi">Paperwork</a></li>
+														<li class="py-[4px] px-[15px] small:px-[5px]"><a href="#" class="text-semi">Funeral arrangement</a></li>
+														<li class="py-[4px] px-[15px] small:px-[5px]"><a href="#" class="text-semi">Cremation arrangements</a></li>
+														<li class="py-[4px] px-[15px] small:px-[5px]"><a href="#" class="text-semi">Funeral agent</a></li>
+														<li class="py-[4px] px-[15px] small:px-[5px]"><a href="#" class="text-semi">Funeral transportation</a></li>
+														<li class="py-[4px] px-[15px] small:px-[5px]"><a href="#" class="text-semi">Carriers</a></li>
+														<li class="py-[4px] px-[15px] small:px-[5px]"><a href="#" class="text-semi">Funeral band</a></li>
+														<li class="py-[4px] px-[15px] small:px-[5px]"><a href="#" class="text-semi">Holding a memorial service</a></li>
+														<li class="py-[4px] px-[15px] small:px-[5px]"><a href="#" class="text-semi">Decontamination</a></li>
+													</ul>
+												</div>
+												<div class="my-5 small:my-1">
+													<a href="#" class="text-semi border-b-[1px] border-b-slate py-[4px] px-[15px] small:py-2 small:px-[5px] font-bold">Funeral arrangements</a>
+													<ul class="flex flex-col mt-5 small:mt-1 min-w-[270px]">
+														<li class="py-[4px] px-[15px] small:px-[5px]"><a href="#" class="text-semi">Budget plan from <strong>250$</strong></a></li>
+														<li class="py-[4px] px-[15px] small:px-[5px]"><a href="#" class="text-semi">Standart plan from <strong>500$</strong></a></li>
+														<li class="py-[4px] px-[15px] small:px-[5px]"><a href="#" class="text-semi">Premium plan from <strong>2 500$</strong></a></li>
+														<li class="py-[4px] px-[15px] small:px-[5px]"><a href="#" class="text-semi">Luxury package from <strong>8 000$</strong></a></li>
+														<li class="py-[4px] px-[15px] small:px-[5px]"><a href="#" class="text-semi">Elite package starting at <strong>25 000$</strong></a></li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="p-5"><a href="#" class="text-large uppercase underline">Funeral goods</a></li>
+										<li class="p-5"><a href="#" class="text-large uppercase underline">Info</a></li>
+										<li class="p-5"><a href="#" class="text-large uppercase underline">Specials</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<ul class="flex flex-wrap regular:hidden">
+							<li class="relative"><a href="#" class="block text-medium uppercase px-[15px] py-[18px] text-white hover:bg-primary hover:underline focus:underline focus:bg-primary">Home</a></li>
+							<li class="relative z-10" x-data="{menuopen: false}">
+								<button type="button" @click.prevent="menuopen = true" class="block text-medium uppercase px-[15px] py-[18px] text-white hover:bg-primary hover:underline focus:underline focus:bg-primary" style="background: url(./assets/img/arrow-down.png) no-repeat center 90%;">Services and prices</button>
+								<div x-show="menuopen" @click.outside="menuopen = false" @keyup.escape.window="menuopen = false" class="absolute top-full mt-[5px] shadow-1lr bg-white p-[10px] border-[1px] border-slight z-20" x-cloak>
+									<div class="container">
+										<div class="flex">
+											<div>
+												<a href="#" class="text-middle border-b-[1px] border-b-slate py-[4px] px-[15px] font-bold">Essential services</a>
+												<ul class="flex flex-col mt-5 min-w-[270px]">
+													<li class="py-[4px] px-[15px]"><a href="#" class="hover:underline focus:underline">Paperwork</a></li>
+													<li class="py-[4px] px-[15px]"><a href="#" class="hover:underline focus:underline">Funeral arrangement</a></li>
+													<li class="py-[4px] px-[15px]"><a href="#" class="hover:underline focus:underline">Cremation arrangements</a></li>
+													<li class="py-[4px] px-[15px]"><a href="#" class="hover:underline focus:underline">Funeral agent</a></li>
+													<li class="py-[4px] px-[15px]"><a href="#" class="hover:underline focus:underline">Funeral transportation</a></li>
+													<li class="py-[4px] px-[15px]"><a href="#" class="hover:underline focus:underline">Carriers</a></li>
+													<li class="py-[4px] px-[15px]"><a href="#" class="hover:underline focus:underline">Funeral band</a></li>
+													<li class="py-[4px] px-[15px]"><a href="#" class="hover:underline focus:underline">Holding a memorial service</a></li>
+													<li class="py-[4px] px-[15px]"><a href="#" class="hover:underline focus:underline">Decontamination</a></li>
+												</ul>
+											</div>
+											<div>
+												<a href="#" class="text-middle border-b-[1px] border-b-slate py-[4px] px-[15px] font-bold">Funeral arrangements</a>
+												<ul class="flex flex-col mt-5 min-w-[270px]">
+													<li class="py-[4px] px-[15px]"><a href="#" class="hover:underline focus:underline">Budget plan from <strong>250$</strong></a></li>
+													<li class="py-[4px] px-[15px]"><a href="#" class="hover:underline focus:underline">Standart plan from <strong>500$</strong></a></li>
+													<li class="py-[4px] px-[15px]"><a href="#" class="hover:underline focus:underline">Premium plan from <strong>2 500$</strong></a></li>
+													<li class="py-[4px] px-[15px]"><a href="#" class="hover:underline focus:underline">Luxury package from <strong>8 000$</strong></a></li>
+													<li class="py-[4px] px-[15px]"><a href="#" class="hover:underline focus:underline">Elite package starting at <strong>25 000$</strong></a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="relative"><a href="#" class="block text-medium uppercase px-[15px] py-[18px] text-white hover:bg-primary hover:underline focus:underline focus:bg-primary">Funeral goods</a></li>
+							<li class="relative"><a href="#" class="block text-medium uppercase px-[15px] py-[18px] text-white hover:bg-primary hover:underline focus:underline focus:bg-primary">Info</a></li>
+							<li class="relative"><a href="#" class="block text-medium uppercase px-[15px] py-[18px] text-white hover:bg-primary hover:underline focus:underline focus:bg-primary">Specials</a></li>
+							<li class="relative"><a href="#" class="block text-medium uppercase px-[15px] py-[18px] text-white hover:bg-primary hover:underline focus:underline focus:bg-primary">Contacts</a></li>
+						</ul>
+						<div class="w-[20%] flex justify-end px-[15px]">
+							<a href="#" class="hover:underline focus:underline block text-medium uppercase px-[15px] py-[18px] text-white pr-[33px]" style="background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAARCAYAAAA/mJfHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAXZJREFUeNqclM0rRFEYxu+9xsxg8jGjRr6yGZJYyk5jhw1ZsvcX+Q/8C8qChQVFSWxEJIry0YjGxxRzPU89N2+nO+p66tc9nfec9+ucc/0wDL2EagKdoAtMgyswAIJUgw1pLS7omxd0wuj34Fm2PXAAqnQ2rk3Rhgyogbo4AjegAsbAJzhR0CFwGmVAZ2WwBc7BPFgzC0fAsZN1Rl9feNbZE7gFL6zb2JhBi+OoZpzR9mGNgeovxvSNzrLOHPvV3MiZj9Nkz2bBK+hWb+oKlFfmkbKqpqpDugQbv6HCsAiWeEXACshpTFbNmAyDssYlMGPtgSIX5Pstpk9W38qManXLTGkB1asLOWj6ktZ8pA7Qrjn2+cHtGb+ToCfhS+gH2+DMZubpBifVHHh3y6QW/pEZW7EbV2YSTYApcAc2wZebGZUDy5pb14tw1QYWdVDs2SPYty8gUgn06ZRG//j9BE6pXpyzC0Wq2BNyxFeyo9KuwaE1/ggwAC33hyv8TSY+AAAAAElFTkSuQmCC) no-repeat right 23px ">CART</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<div class="functions mt-[10px]">
+			<div class="container">
+				<div class="shadow-1lr bg-deadlight p-[10px] rounded-[5px]">
+					<div class="flex flex-wrap">
+						<a href="#" class="my-[5px] mx-[5px] basis-1/5 flex-grow bg-pepel text-left text-white p-[15px] leading-none uppercase hover:bg-secondary focus:bg-secondary transition bg-cover bg-h-full regular:basis-1/3 semi:basis-full" style="background: url(./assets/img/fun-1.png) no-repeat right top;">Get a funeral <br>agent</a>
+						<a href="#" class="my-[5px] mx-[5px] basis-1/5 flex-grow bg-pepel text-left text-white bg-h-full p-[15px] leading-none uppercase hover:bg-secondary focus:bg-secondary transition regular:basis-1/3 semi:basis-full" style="background: url(./assets/img/fun-2.png) no-repeat right top;">Order a <br> wreath</a>
+						<a href="#" class="my-[5px] mx-[5px] basis-1/5 flex-grow bg-pepel text-left text-white p-[15px] leading-none uppercase hover:bg-secondary focus:bg-secondary transition bg-h-full regular:basis-1/3 semi:basis-full" style="background: url(./assets/img/fun-3.png) no-repeat right top;">Pick up a <br> coffin</a>
+						<a href="#" class="my-[5px] mx-[5px] basis-1/5 flex-grow bg-pepel text-left text-white p-[15px] leading-none uppercase hover:bg-secondary focus:bg-secondary transition bg-h-full regular:basis-1/3 semi:basis-full" style="background: url(./assets/img/fun-4.png) no-repeat right top;">Order transportation <br> to a funeral</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<main class="main mt-10">
+		<div class="text">
+			<div class="container">
+				<h1>Ritual services in Moscow and Moscow region</h1>
+				<p><strong>Funeral home "Spanritual"</strong> carries out its activities providing funeral services in Moscow and the Moscow region, as well as funeral products confirmed by a certificate of quality and conformity.</p>
+				<p>
+					We offer you professionals in ritual services who have undergone mandatory full training at the Russian State University of Tourism and Service. All ritual agents have a certificate of the state sample in the specialty "Receiver of orders for ritual service" - this allows us to provide ritual services to the population at the appropriate high level.
+				</p>
+			</div>
+		</div>
+		<div class="classes" style="margin-top: 15px; margin-bottom: 20px;">
+			<div class="container">
+				<div class="flex flex-wrap">
+					<div class="col-tsl overflow-hidden">
+						<a href="#" class="overflow-hidden relative img-op">
+							<img src="./assets/img/p-ekonom.jpg" class="rounded-t-[5px] w-full h-[192px] object-cover opacity-70" alt="">
+							<div class="absolute bottom-0 left-0 w-full bg-temny text-white px-[10px] py-[15px]">
+								<span class="text-semi font-medium">Budget plan</span>
+								<br>
+								<span>from 250$</span>
+							</div>
+						</a>
+					</div>
+					<div class="col-tsl overflow-hidden">
+						<a href="#" class="overflow-hidden relative img-op">
+							<img src="./assets/img/p-standart.jpg" class="rounded-t-[5px] w-full h-[192px] object-cover opacity-70" alt="">
+							<div class="absolute bottom-0 left-0 w-full bg-temny text-white px-[10px] py-[15px]">
+								<span class="text-semi font-medium">Standart plan</span>
+								<br>
+								<span>from 500$</span>
+							</div>
+						</a>
+					</div>
+					<div class="col-tsl overflow-hidden">
+						<a href="#" class="overflow-hidden relative img-op">
+							<img src="./assets/img/p-premium.jpg" class="rounded-t-[5px] w-full h-[192px] object-cover opacity-70" alt="">
+							<div class="absolute bottom-0 left-0 w-full bg-temny text-white px-[10px] py-[15px]">
+								<span class="text-semi font-medium">Premium plan</span>
+								<br>
+								<span> from 2 500$</span>
+							</div>
+						</a>
+					</div>
+					<div class="col-tsl overflow-hidden">
+						<a href="#" class="overflow-hidden relative img-op">
+							<img src="./assets/img/p-prestige.jpg" class="rounded-t-[5px] w-full h-[192px] object-cover opacity-70" alt="">
+							<div class="absolute bottom-0 left-0 w-full bg-temny text-white px-[10px] py-[15px]">
+								<span class="text-semi font-medium">Luxury package</span>
+								<br>
+								<span>from 8 000$</span>
+							</div>
+						</a>
+					</div>
+					<div class="col-tsl overflow-hidden">
+						<a href="#" class="overflow-hidden relative img-op">
+							<img src="./assets/img/p-elite.jpg" class="rounded-t-[5px] w-full h-[192px] object-cover opacity-70" alt="">
+							<div class="absolute bottom-0 left-0 w-full bg-temny text-white px-[10px] py-[15px]">
+								<span class="text-semi font-medium">Elite package</span>
+								<br>
+								<span>starting at 25 000$</span>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="text">
+			<div class="container">
+				<h2>Cost of services</h2>
+				<p>Our funeral home carries out funeral activities (provision of funeral services in Moscow and the Moscow region ) according to the regulations of the charter of the organization within the framework of this Federal Law "On state registration of legal entities" from 08.08.2001g.№-129-FZ., as well as on the basis of this Federal Law "On burial and funeral business" from 08.12.1995g. №-8 FZ RF. <strong> Specialist visit </strong> to the home / hospital (morgue), as in Moscow SAO, SVAO, NWAO, CAO, VAO, SEAO, Southeast, Southwest, SAO, SAO, TINAO and in the Moscow region <strong>FREE</strong> of charge.</p>
+				<img src="./assets/img/church.jpg" alt="">
+				<p>The death of a person is always an irretrievable loss. Loss of a beloved and close person is an inexpressible grief for his relatives and friends, heartache. At these moments, life seems to "stop", and it is necessary to <a href="#"> organize a funeral </a> to adequately conduct a person to the last journey. Being in a stressful state, in grief and with pain in the heart, relatives and friends are not able to organize funerals, and sometimes do not know where to turn. This is when our <a href="#"> employee comes </a> to the rescue.</p>
+			</div>
+		</div>
+		<div class="nepopravimoe">
+			<div class="container">
+				<div class="flex flex-col justify-center text-left items-center regular:items-start py-[20px] w-full bg-smoothlight border-solid border-[2px] border-light text-medium regular:text-semi rounded-[5px] px-10 regular:px-[20px] small:px-[10px]" style="margin-top: 20px; margin-bottom: 20px;">
+					If the worst has happened, call the phone number&nbsp;<strong>(495) 799-8378</strong>
+				</div>
+			</div>
+		</div>
+		<div class="packages" x-data="{tabindex: 0, maxindex: 1}">
+			<div class="container">
+				<div class="flex justify-center regular:flex-col my-[15px]">
+					<button type="button" class="uppercase text-middle py-[15px] px-[50px] border-[1px]  border-secondary m-[5px]" :class="tabindex === 0 ? 'bg-secondary text-white' : 'text-dark hover:text-red focus:text-red'" @click="tabindex = 0" @keyup.window="if(($event.key == 'Right' || $event.key == 'ArrowRight') && tabindex < maxindex) tabindex++">FUNERALS</button>
+					<button type="button" class="uppercase text-middle py-[15px] px-[50px] border-[1px] border-secondary m-[5px]" :class="tabindex === 1 ? 'bg-secondary text-white' : 'text-dark hover:text-red focus:text-red'" @click="tabindex = 1" @keyup.window="if(($event.key == 'Left' || $event.key == 'ArrowLeft') && tabindex > 0) tabindex--">CREMATION</button>
+				</div>
+				<div x-show="tabindex === 0">
+					<div class="py-[10px]">
+						<div class="flex flex-col text-semi">
+							<div class="w-full border-[3px] border-primary rounded-[3px] my-[5px]" x-data="{dropdown: false}">
+								<div class="relative overflow-hidden">
+									<div class="w-full flex p-[10px] items-center min-h-[92px] middle:flex-col middle:items-start">
+										<div class="basis-[70%] text">
+											Funeral price at <strong>"Budget"</strong> plan
+											<br> 
+											<br>
+											from 250$
+										</div>
+										<div class="basis-[30%] middle:w-full middle:mt-[15px]">
+											<div class="flex justify-center">
+												<button type="button" class="border-b-[1px] border-dashed border-b-white text-white text-shadow-lg middle:bg-secondary middle:py-3 middle:w-full middle:text-shadow-none middle:border-transparent" @click="dropdown = !dropdown">Read More</button>
+											</div>
+										</div>
+									</div>
+									<div class="triangle-big overflow-hidden" :class="dropdown ? 'active' : ''" ></div>
+								</div>
+								<div class="overflow-y-hidden transition-all ease-in-out duration-500" style="height: 0px;" :style="dropdown ? `height: ${$el.scrollHeight}px;` : 'height: 0px;'">
+									<div class="px-[15px] py-[25px] min-w-[700px] overflow-x-auto">
+										<table cellspacing="1" cellpadding="1" style="width: 100%;">
+											<tbody>
+												<tr>
+													<td style="font-weight: bold;">No. n/a</td>
+													<td style="font-weight: bold;">Name of ritual items and services</td>
+													<td style="font-weight: bold;">unit.</td>
+													<td style="font-weight: bold;">price, $</td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>A wooden coffin with fabric upholstery</td>
+													<td>1 pc.</td>
+													<td>50$</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>The bedding (interior of the coffin)</td>
+													<td>1 pc.</td>
+													<td>40$</td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>Satin pillow</td>
+													<td>1 pc.</td>
+													<td>20$</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>Coverlet (white or orthodox)</td>
+													<td>1 pc.</td>
+													<td>30$</td>
+												</tr>
+												<tr>
+													<td>5</td>
+													<td>Slippers leather suede.</td>
+													<td>1 pc.</td>
+													<td>10$</td>
+												</tr>
+												<tr>
+													<td>6</td>
+													<td>Agent visit</td>
+													<td>1 pair</td>
+													<td>FREE</td>
+												</tr>
+												<tr>
+													<td>7</td>
+													<td>Delivery of supplies to the SIDS</td>
+													<td>1 pc.</td>
+													<td>120$</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>Order placement</td>
+													<td>1 cond.</td>
+													<td>25$</td>
+												</tr>
+												<tr>
+													<td style="font-weight: bold;">9</td>
+													<td style="font-weight: bold;">Total for section</td>
+													<td style="font-weight: bold;">&nbsp;</td>
+													<td style="font-weight: bold;">295$</td>
+												</tr>
+												<tr>
+													<td>10</td>
+													<td>Transportation (route: morgue - cemetery/crematorium)</td>
+													<td>1 pc.</td>
+													<td>500$</td>
+												</tr>
+												<tr>
+													<td>11</td>
+													<td>Ordering catafal transportation</td>
+													<td>1 pc.</td>
+													<td>200$</td>
+												</tr>
+												<tr>
+													<td style="font-weight: bold;">12</td>
+													<td style="font-weight: bold;">Total for section</td>
+													<td style="font-weight: bold;">&nbsp;</td>
+													<td style="font-weight: bold;">700$</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="py-[10px]">
+						<div class="flex flex-col text-semi">
+							<div class="w-full border-[3px] border-primary rounded-[3px] my-[5px]" x-data="{dropdown: false}">
+								<div class="relative overflow-hidden">
+									<div class="w-full flex p-[10px] items-center min-h-[92px] middle:flex-col middle:items-start">
+										<div class="basis-[70%] text">
+											Funeral price at <strong>"Standart"</strong> plan
+											<br> 
+											<br>
+											from 500$
+										</div>
+										<div class="basis-[30%] middle:w-full middle:mt-[15px]">
+											<div class="flex justify-center">
+												<button type="button" class="border-b-[1px] border-dashed border-b-white text-white text-shadow-lg middle:bg-secondary middle:py-3 middle:w-full middle:text-shadow-none middle:border-transparent" @click="dropdown = !dropdown">Read More</button>
+											</div>
+										</div>
+									</div>
+									<div class="triangle-big overflow-hidden" :class="dropdown ? 'active' : ''" ></div>
+								</div>
+								<div class="overflow-y-hidden transition-all ease-in-out duration-500" style="height: 0px;" :style="dropdown ? `height: ${$el.scrollHeight}px;` : 'height: 0px;'">
+									<div class="px-[15px] py-[25px] min-w-[700px] overflow-x-auto">
+										<table cellspacing="1" cellpadding="1" style="width: 100%;">
+											<tbody>
+												<tr>
+													<td style="font-weight: bold;">No. n/a</td>
+													<td style="font-weight: bold;">Name of ritual items and services</td>
+													<td style="font-weight: bold;">unit.</td>
+													<td style="font-weight: bold;">price, $</td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>A wooden coffin with fabric upholstery</td>
+													<td>1 pc.</td>
+													<td>50$</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>The bedding (interior of the coffin)</td>
+													<td>1 pc.</td>
+													<td>40$</td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>Satin pillow</td>
+													<td>1 pc.</td>
+													<td>20$</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>Coverlet (white or orthodox)</td>
+													<td>1 pc.</td>
+													<td>30$</td>
+												</tr>
+												<tr>
+													<td>5</td>
+													<td>Slippers leather suede.</td>
+													<td>1 pc.</td>
+													<td>10$</td>
+												</tr>
+												<tr>
+													<td>6</td>
+													<td>Agent visit</td>
+													<td>1 pair</td>
+													<td>FREE</td>
+												</tr>
+												<tr>
+													<td>7</td>
+													<td>Delivery of supplies to the SIDS</td>
+													<td>1 pc.</td>
+													<td>120$</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>Order placement</td>
+													<td>1 cond.</td>
+													<td>25$</td>
+												</tr>
+												<tr>
+													<td style="font-weight: bold;">9</td>
+													<td style="font-weight: bold;">Total for section</td>
+													<td style="font-weight: bold;">&nbsp;</td>
+													<td style="font-weight: bold;">295$</td>
+												</tr>
+												<tr>
+													<td>10</td>
+													<td>Transportation (route: morgue - cemetery/crematorium)</td>
+													<td>1 pc.</td>
+													<td>500$</td>
+												</tr>
+												<tr>
+													<td>11</td>
+													<td>Ordering catafal transportation</td>
+													<td>1 pc.</td>
+													<td>200$</td>
+												</tr>
+												<tr>
+													<td style="font-weight: bold;">12</td>
+													<td style="font-weight: bold;">Total for section</td>
+													<td style="font-weight: bold;">&nbsp;</td>
+													<td style="font-weight: bold;">700$</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="py-[10px]">
+						<div class="flex flex-col text-semi">
+							<div class="w-full border-[3px] border-primary rounded-[3px] my-[5px]" x-data="{dropdown: false}">
+								<div class="relative overflow-hidden">
+									<div class="w-full flex p-[10px] items-center min-h-[92px] middle:flex-col middle:items-start">
+										<div class="basis-[70%] text">
+											Funeral price at <strong>"Premium"</strong> plan
+											<br> 
+											<br>
+											from 2 500$
+										</div>
+										<div class="basis-[30%] middle:w-full middle:mt-[15px]">
+											<div class="flex justify-center">
+												<button type="button" class="border-b-[1px] border-dashed border-b-white text-white text-shadow-lg middle:bg-secondary middle:py-3 middle:w-full middle:text-shadow-none middle:border-transparent" @click="dropdown = !dropdown">Read More</button>
+											</div>
+										</div>
+									</div>
+									<div class="triangle-big overflow-hidden" :class="dropdown ? 'active' : ''" ></div>
+								</div>
+								<div class="overflow-y-hidden transition-all ease-in-out duration-500" style="height: 0px;" :style="dropdown ? `height: ${$el.scrollHeight}px;` : 'height: 0px;'">
+									<div class="px-[15px] py-[25px] min-w-[700px] overflow-x-auto">
+										<table cellspacing="1" cellpadding="1" style="width: 100%;">
+											<tbody>
+												<tr>
+													<td style="font-weight: bold;">No. n/a</td>
+													<td style="font-weight: bold;">Name of ritual items and services</td>
+													<td style="font-weight: bold;">unit.</td>
+													<td style="font-weight: bold;">price, $</td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>A wooden coffin with fabric upholstery</td>
+													<td>1 pc.</td>
+													<td>50$</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>The bedding (interior of the coffin)</td>
+													<td>1 pc.</td>
+													<td>40$</td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>Satin pillow</td>
+													<td>1 pc.</td>
+													<td>20$</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>Coverlet (white or orthodox)</td>
+													<td>1 pc.</td>
+													<td>30$</td>
+												</tr>
+												<tr>
+													<td>5</td>
+													<td>Slippers leather suede.</td>
+													<td>1 pc.</td>
+													<td>10$</td>
+												</tr>
+												<tr>
+													<td>6</td>
+													<td>Agent visit</td>
+													<td>1 pair</td>
+													<td>FREE</td>
+												</tr>
+												<tr>
+													<td>7</td>
+													<td>Delivery of supplies to the SIDS</td>
+													<td>1 pc.</td>
+													<td>120$</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>Order placement</td>
+													<td>1 cond.</td>
+													<td>25$</td>
+												</tr>
+												<tr>
+													<td style="font-weight: bold;">9</td>
+													<td style="font-weight: bold;">Total for section</td>
+													<td style="font-weight: bold;">&nbsp;</td>
+													<td style="font-weight: bold;">295$</td>
+												</tr>
+												<tr>
+													<td>10</td>
+													<td>Transportation (route: morgue - cemetery/crematorium)</td>
+													<td>1 pc.</td>
+													<td>500$</td>
+												</tr>
+												<tr>
+													<td>11</td>
+													<td>Ordering catafal transportation</td>
+													<td>1 pc.</td>
+													<td>200$</td>
+												</tr>
+												<tr>
+													<td style="font-weight: bold;">12</td>
+													<td style="font-weight: bold;">Total for section</td>
+													<td style="font-weight: bold;">&nbsp;</td>
+													<td style="font-weight: bold;">700$</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="py-[10px]">
+						<div class="flex flex-col text-semi">
+							<div class="w-full border-[3px] border-primary rounded-[3px] my-[5px]" x-data="{dropdown: false}">
+								<div class="relative overflow-hidden">
+									<div class="w-full flex p-[10px] items-center min-h-[92px] middle:flex-col middle:items-start">
+										<div class="basis-[70%] text">
+											Funeral price at <strong>"Luxury"</strong> plan
+											<br> 
+											<br>
+											from 8 000$
+										</div>
+										<div class="basis-[30%] middle:w-full middle:mt-[15px]">
+											<div class="flex justify-center">
+												<button type="button" class="border-b-[1px] border-dashed border-b-white text-white text-shadow-lg middle:bg-secondary middle:py-3 middle:w-full middle:text-shadow-none middle:border-transparent" @click="dropdown = !dropdown">Read More</button>
+											</div>
+										</div>
+									</div>
+									<div class="triangle-big overflow-hidden" :class="dropdown ? 'active' : ''" ></div>
+								</div>
+								<div class="overflow-y-hidden transition-all ease-in-out duration-500" style="height: 0px;" :style="dropdown ? `height: ${$el.scrollHeight}px;` : 'height: 0px;'">
+									<div class="px-[15px] py-[25px] min-w-[700px] overflow-x-auto">
+										<table cellspacing="1" cellpadding="1" style="width: 100%;">
+											<tbody>
+												<tr>
+													<td style="font-weight: bold;">No. n/a</td>
+													<td style="font-weight: bold;">Name of ritual items and services</td>
+													<td style="font-weight: bold;">unit.</td>
+													<td style="font-weight: bold;">price, $</td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>A wooden coffin with fabric upholstery</td>
+													<td>1 pc.</td>
+													<td>50$</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>The bedding (interior of the coffin)</td>
+													<td>1 pc.</td>
+													<td>40$</td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>Satin pillow</td>
+													<td>1 pc.</td>
+													<td>20$</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>Coverlet (white or orthodox)</td>
+													<td>1 pc.</td>
+													<td>30$</td>
+												</tr>
+												<tr>
+													<td>5</td>
+													<td>Slippers leather suede.</td>
+													<td>1 pc.</td>
+													<td>10$</td>
+												</tr>
+												<tr>
+													<td>6</td>
+													<td>Agent visit</td>
+													<td>1 pair</td>
+													<td>FREE</td>
+												</tr>
+												<tr>
+													<td>7</td>
+													<td>Delivery of supplies to the SIDS</td>
+													<td>1 pc.</td>
+													<td>120$</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>Order placement</td>
+													<td>1 cond.</td>
+													<td>25$</td>
+												</tr>
+												<tr>
+													<td style="font-weight: bold;">9</td>
+													<td style="font-weight: bold;">Total for section</td>
+													<td style="font-weight: bold;">&nbsp;</td>
+													<td style="font-weight: bold;">295$</td>
+												</tr>
+												<tr>
+													<td>10</td>
+													<td>Transportation (route: morgue - cemetery/crematorium)</td>
+													<td>1 pc.</td>
+													<td>500$</td>
+												</tr>
+												<tr>
+													<td>11</td>
+													<td>Ordering catafal transportation</td>
+													<td>1 pc.</td>
+													<td>200$</td>
+												</tr>
+												<tr>
+													<td style="font-weight: bold;">12</td>
+													<td style="font-weight: bold;">Total for section</td>
+													<td style="font-weight: bold;">&nbsp;</td>
+													<td style="font-weight: bold;">700$</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="py-[10px]">
+						<div class="flex flex-col text-semi">
+							<div class="w-full border-[3px] border-primary rounded-[3px] my-[5px]" x-data="{dropdown: false}">
+								<div class="relative overflow-hidden">
+									<div class="w-full flex p-[10px] items-center min-h-[92px] middle:flex-col middle:items-start">
+										<div class="basis-[70%] text">
+											Funeral price at <strong>"Elite"</strong> plan
+											<br> 
+											<br>
+											from 25 000$
+										</div>
+										<div class="basis-[30%] middle:w-full middle:mt-[15px]">
+											<div class="flex justify-center">
+												<button type="button" class="border-b-[1px] border-dashed border-b-white text-white text-shadow-lg middle:bg-secondary middle:py-3 middle:w-full middle:text-shadow-none middle:border-transparent" @click="dropdown = !dropdown">Read More</button>
+											</div>
+										</div>
+									</div>
+									<div class="triangle-big overflow-hidden" :class="dropdown ? 'active' : ''" ></div>
+								</div>
+								<div class="overflow-y-hidden transition-all ease-in-out duration-500" style="height: 0px;" :style="dropdown ? `height: ${$el.scrollHeight}px;` : 'height: 0px;'">
+									<div class="px-[15px] py-[25px] min-w-[700px] overflow-x-auto">
+										<table cellspacing="1" cellpadding="1" style="width: 100%;">
+											<tbody>
+												<tr>
+													<td style="font-weight: bold;">No. n/a</td>
+													<td style="font-weight: bold;">Name of ritual items and services</td>
+													<td style="font-weight: bold;">unit.</td>
+													<td style="font-weight: bold;">price, $</td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>A wooden coffin with fabric upholstery</td>
+													<td>1 pc.</td>
+													<td>50$</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>The bedding (interior of the coffin)</td>
+													<td>1 pc.</td>
+													<td>40$</td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>Satin pillow</td>
+													<td>1 pc.</td>
+													<td>20$</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>Coverlet (white or orthodox)</td>
+													<td>1 pc.</td>
+													<td>30$</td>
+												</tr>
+												<tr>
+													<td>5</td>
+													<td>Slippers leather suede.</td>
+													<td>1 pc.</td>
+													<td>10$</td>
+												</tr>
+												<tr>
+													<td>6</td>
+													<td>Agent visit</td>
+													<td>1 pair</td>
+													<td>FREE</td>
+												</tr>
+												<tr>
+													<td>7</td>
+													<td>Delivery of supplies to the SIDS</td>
+													<td>1 pc.</td>
+													<td>120$</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>Order placement</td>
+													<td>1 cond.</td>
+													<td>25$</td>
+												</tr>
+												<tr>
+													<td style="font-weight: bold;">9</td>
+													<td style="font-weight: bold;">Total for section</td>
+													<td style="font-weight: bold;">&nbsp;</td>
+													<td style="font-weight: bold;">295$</td>
+												</tr>
+												<tr>
+													<td>10</td>
+													<td>Transportation (route: morgue - cemetery/crematorium)</td>
+													<td>1 pc.</td>
+													<td>500$</td>
+												</tr>
+												<tr>
+													<td>11</td>
+													<td>Ordering catafal transportation</td>
+													<td>1 pc.</td>
+													<td>200$</td>
+												</tr>
+												<tr>
+													<td style="font-weight: bold;">12</td>
+													<td style="font-weight: bold;">Total for section</td>
+													<td style="font-weight: bold;">&nbsp;</td>
+													<td style="font-weight: bold;">700$</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div x-show="tabindex === 1">
+					<div class="py-[10px]">
+						<div class="flex flex-col text-semi">
+							<div class="w-full border-[3px] border-primary rounded-[3px] my-[5px]" x-data="{dropdown: false}">
+								<div class="relative overflow-hidden">
+									<div class="w-full flex p-[10px] items-center min-h-[92px] middle:flex-col middle:items-start">
+										<div class="basis-[70%] text">
+											Cremation price at <strong>"Budget"</strong> plan
+											<br> 
+											<br>
+											from 250$
+										</div>
+										<div class="basis-[30%] middle:w-full middle:mt-[15px]">
+											<div class="flex justify-center">
+												<button type="button" class="border-b-[1px] border-dashed border-b-white text-white text-shadow-lg middle:bg-secondary middle:py-3 middle:w-full middle:text-shadow-none middle:border-transparent" @click="dropdown = !dropdown">Read More</button>
+											</div>
+										</div>
+									</div>
+									<div class="triangle-big overflow-hidden" :class="dropdown ? 'active' : ''" ></div>
+								</div>
+								<div class="overflow-y-hidden transition-all ease-in-out duration-500" style="height: 0px;" :style="dropdown ? `height: ${$el.scrollHeight}px;` : 'height: 0px;'">
+									<div class="px-[15px] py-[25px] min-w-[700px] overflow-x-auto">
+										<table cellspacing="1" cellpadding="1" style="width: 100%;">
+											<tbody>
+												<tr>
+													<td style="font-weight: bold;">No. n/a</td>
+													<td style="font-weight: bold;">Name of ritual items and services</td>
+													<td style="font-weight: bold;">unit.</td>
+													<td style="font-weight: bold;">price, $</td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>A wooden coffin with fabric upholstery</td>
+													<td>1 pc.</td>
+													<td>50$</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>The bedding (interior of the coffin)</td>
+													<td>1 pc.</td>
+													<td>40$</td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>Satin pillow</td>
+													<td>1 pc.</td>
+													<td>20$</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>Coverlet (white or orthodox)</td>
+													<td>1 pc.</td>
+													<td>30$</td>
+												</tr>
+												<tr>
+													<td>5</td>
+													<td>Slippers leather suede.</td>
+													<td>1 pc.</td>
+													<td>10$</td>
+												</tr>
+												<tr>
+													<td>6</td>
+													<td>Agent visit</td>
+													<td>1 pair</td>
+													<td>FREE</td>
+												</tr>
+												<tr>
+													<td>7</td>
+													<td>Delivery of supplies to the SIDS</td>
+													<td>1 pc.</td>
+													<td>120$</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>Order placement</td>
+													<td>1 cond.</td>
+													<td>25$</td>
+												</tr>
+												<tr>
+													<td style="font-weight: bold;">9</td>
+													<td style="font-weight: bold;">Total for section</td>
+													<td style="font-weight: bold;">&nbsp;</td>
+													<td style="font-weight: bold;">295$</td>
+												</tr>
+												<tr>
+													<td>10</td>
+													<td>Transportation (route: morgue - cemetery/crematorium)</td>
+													<td>1 pc.</td>
+													<td>500$</td>
+												</tr>
+												<tr>
+													<td>11</td>
+													<td>Ordering catafal transportation</td>
+													<td>1 pc.</td>
+													<td>200$</td>
+												</tr>
+												<tr>
+													<td style="font-weight: bold;">12</td>
+													<td style="font-weight: bold;">Total for section</td>
+													<td style="font-weight: bold;">&nbsp;</td>
+													<td style="font-weight: bold;">700$</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="py-[10px]">
+						<div class="flex flex-col text-semi">
+							<div class="w-full border-[3px] border-primary rounded-[3px] my-[5px]" x-data="{dropdown: false}">
+								<div class="relative overflow-hidden">
+									<div class="w-full flex p-[10px] items-center min-h-[92px] middle:flex-col middle:items-start">
+										<div class="basis-[70%] text">
+											Cremation price at <strong>"Standart"</strong> plan
+											<br> 
+											<br>
+											from 500$
+										</div>
+										<div class="basis-[30%] middle:w-full middle:mt-[15px]">
+											<div class="flex justify-center">
+												<button type="button" class="border-b-[1px] border-dashed border-b-white text-white text-shadow-lg middle:bg-secondary middle:py-3 middle:w-full middle:text-shadow-none middle:border-transparent" @click="dropdown = !dropdown">Read More</button>
+											</div>
+										</div>
+									</div>
+									<div class="triangle-big overflow-hidden" :class="dropdown ? 'active' : ''" ></div>
+								</div>
+								<div class="overflow-y-hidden transition-all ease-in-out duration-500" style="height: 0px;" :style="dropdown ? `height: ${$el.scrollHeight}px;` : 'height: 0px;'">
+									<div class="px-[15px] py-[25px] min-w-[700px] overflow-x-auto">
+										<table cellspacing="1" cellpadding="1" style="width: 100%;">
+											<tbody>
+												<tr>
+													<td style="font-weight: bold;">No. n/a</td>
+													<td style="font-weight: bold;">Name of ritual items and services</td>
+													<td style="font-weight: bold;">unit.</td>
+													<td style="font-weight: bold;">price, $</td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>A wooden coffin with fabric upholstery</td>
+													<td>1 pc.</td>
+													<td>50$</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>The bedding (interior of the coffin)</td>
+													<td>1 pc.</td>
+													<td>40$</td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>Satin pillow</td>
+													<td>1 pc.</td>
+													<td>20$</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>Coverlet (white or orthodox)</td>
+													<td>1 pc.</td>
+													<td>30$</td>
+												</tr>
+												<tr>
+													<td>5</td>
+													<td>Slippers leather suede.</td>
+													<td>1 pc.</td>
+													<td>10$</td>
+												</tr>
+												<tr>
+													<td>6</td>
+													<td>Agent visit</td>
+													<td>1 pair</td>
+													<td>FREE</td>
+												</tr>
+												<tr>
+													<td>7</td>
+													<td>Delivery of supplies to the SIDS</td>
+													<td>1 pc.</td>
+													<td>120$</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>Order placement</td>
+													<td>1 cond.</td>
+													<td>25$</td>
+												</tr>
+												<tr>
+													<td style="font-weight: bold;">9</td>
+													<td style="font-weight: bold;">Total for section</td>
+													<td style="font-weight: bold;">&nbsp;</td>
+													<td style="font-weight: bold;">295$</td>
+												</tr>
+												<tr>
+													<td>10</td>
+													<td>Transportation (route: morgue - cemetery/crematorium)</td>
+													<td>1 pc.</td>
+													<td>500$</td>
+												</tr>
+												<tr>
+													<td>11</td>
+													<td>Ordering catafal transportation</td>
+													<td>1 pc.</td>
+													<td>200$</td>
+												</tr>
+												<tr>
+													<td style="font-weight: bold;">12</td>
+													<td style="font-weight: bold;">Total for section</td>
+													<td style="font-weight: bold;">&nbsp;</td>
+													<td style="font-weight: bold;">700$</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="py-[10px]">
+						<div class="flex flex-col text-semi">
+							<div class="w-full border-[3px] border-primary rounded-[3px] my-[5px]" x-data="{dropdown: false}">
+								<div class="relative overflow-hidden">
+									<div class="w-full flex p-[10px] items-center min-h-[92px] middle:flex-col middle:items-start">
+										<div class="basis-[70%] text">
+											Cremation price at <strong>"Premium"</strong> plan
+											<br> 
+											<br>
+											from 2 500$
+										</div>
+										<div class="basis-[30%] middle:w-full middle:mt-[15px]">
+											<div class="flex justify-center">
+												<button type="button" class="border-b-[1px] border-dashed border-b-white text-white text-shadow-lg middle:bg-secondary middle:py-3 middle:w-full middle:text-shadow-none middle:border-transparent" @click="dropdown = !dropdown">Read More</button>
+											</div>
+										</div>
+									</div>
+									<div class="triangle-big overflow-hidden" :class="dropdown ? 'active' : ''" ></div>
+								</div>
+								<div class="overflow-y-hidden transition-all ease-in-out duration-500" style="height: 0px;" :style="dropdown ? `height: ${$el.scrollHeight}px;` : 'height: 0px;'">
+									<div class="px-[15px] py-[25px] min-w-[700px] overflow-x-auto">
+										<table cellspacing="1" cellpadding="1" style="width: 100%;">
+											<tbody>
+												<tr>
+													<td style="font-weight: bold;">No. n/a</td>
+													<td style="font-weight: bold;">Name of ritual items and services</td>
+													<td style="font-weight: bold;">unit.</td>
+													<td style="font-weight: bold;">price, $</td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>A wooden coffin with fabric upholstery</td>
+													<td>1 pc.</td>
+													<td>50$</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>The bedding (interior of the coffin)</td>
+													<td>1 pc.</td>
+													<td>40$</td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>Satin pillow</td>
+													<td>1 pc.</td>
+													<td>20$</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>Coverlet (white or orthodox)</td>
+													<td>1 pc.</td>
+													<td>30$</td>
+												</tr>
+												<tr>
+													<td>5</td>
+													<td>Slippers leather suede.</td>
+													<td>1 pc.</td>
+													<td>10$</td>
+												</tr>
+												<tr>
+													<td>6</td>
+													<td>Agent visit</td>
+													<td>1 pair</td>
+													<td>FREE</td>
+												</tr>
+												<tr>
+													<td>7</td>
+													<td>Delivery of supplies to the SIDS</td>
+													<td>1 pc.</td>
+													<td>120$</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>Order placement</td>
+													<td>1 cond.</td>
+													<td>25$</td>
+												</tr>
+												<tr>
+													<td style="font-weight: bold;">9</td>
+													<td style="font-weight: bold;">Total for section</td>
+													<td style="font-weight: bold;">&nbsp;</td>
+													<td style="font-weight: bold;">295$</td>
+												</tr>
+												<tr>
+													<td>10</td>
+													<td>Transportation (route: morgue - cemetery/crematorium)</td>
+													<td>1 pc.</td>
+													<td>500$</td>
+												</tr>
+												<tr>
+													<td>11</td>
+													<td>Ordering catafal transportation</td>
+													<td>1 pc.</td>
+													<td>200$</td>
+												</tr>
+												<tr>
+													<td style="font-weight: bold;">12</td>
+													<td style="font-weight: bold;">Total for section</td>
+													<td style="font-weight: bold;">&nbsp;</td>
+													<td style="font-weight: bold;">700$</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="py-[10px]">
+						<div class="flex flex-col text-semi">
+							<div class="w-full border-[3px] border-primary rounded-[3px] my-[5px]" x-data="{dropdown: false}">
+								<div class="relative overflow-hidden">
+									<div class="w-full flex p-[10px] items-center min-h-[92px] middle:flex-col middle:items-start">
+										<div class="basis-[70%] text">
+											Cremation price at <strong>"Luxury"</strong> plan
+											<br> 
+											<br>
+											from 8 000$
+										</div>
+										<div class="basis-[30%] middle:w-full middle:mt-[15px]">
+											<div class="flex justify-center">
+												<button type="button" class="border-b-[1px] border-dashed border-b-white text-white text-shadow-lg middle:bg-secondary middle:py-3 middle:w-full middle:text-shadow-none middle:border-transparent" @click="dropdown = !dropdown">Read More</button>
+											</div>
+										</div>
+									</div>
+									<div class="triangle-big overflow-hidden" :class="dropdown ? 'active' : ''" ></div>
+								</div>
+								<div class="overflow-y-hidden transition-all ease-in-out duration-500" style="height: 0px;" :style="dropdown ? `height: ${$el.scrollHeight}px;` : 'height: 0px;'">
+									<div class="px-[15px] py-[25px] min-w-[700px] overflow-x-auto">
+										<table cellspacing="1" cellpadding="1" style="width: 100%;">
+											<tbody>
+												<tr>
+													<td style="font-weight: bold;">No. n/a</td>
+													<td style="font-weight: bold;">Name of ritual items and services</td>
+													<td style="font-weight: bold;">unit.</td>
+													<td style="font-weight: bold;">price, $</td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>A wooden coffin with fabric upholstery</td>
+													<td>1 pc.</td>
+													<td>50$</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>The bedding (interior of the coffin)</td>
+													<td>1 pc.</td>
+													<td>40$</td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>Satin pillow</td>
+													<td>1 pc.</td>
+													<td>20$</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>Coverlet (white or orthodox)</td>
+													<td>1 pc.</td>
+													<td>30$</td>
+												</tr>
+												<tr>
+													<td>5</td>
+													<td>Slippers leather suede.</td>
+													<td>1 pc.</td>
+													<td>10$</td>
+												</tr>
+												<tr>
+													<td>6</td>
+													<td>Agent visit</td>
+													<td>1 pair</td>
+													<td>FREE</td>
+												</tr>
+												<tr>
+													<td>7</td>
+													<td>Delivery of supplies to the SIDS</td>
+													<td>1 pc.</td>
+													<td>120$</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>Order placement</td>
+													<td>1 cond.</td>
+													<td>25$</td>
+												</tr>
+												<tr>
+													<td style="font-weight: bold;">9</td>
+													<td style="font-weight: bold;">Total for section</td>
+													<td style="font-weight: bold;">&nbsp;</td>
+													<td style="font-weight: bold;">295$</td>
+												</tr>
+												<tr>
+													<td>10</td>
+													<td>Transportation (route: morgue - cemetery/crematorium)</td>
+													<td>1 pc.</td>
+													<td>500$</td>
+												</tr>
+												<tr>
+													<td>11</td>
+													<td>Ordering catafal transportation</td>
+													<td>1 pc.</td>
+													<td>200$</td>
+												</tr>
+												<tr>
+													<td style="font-weight: bold;">12</td>
+													<td style="font-weight: bold;">Total for section</td>
+													<td style="font-weight: bold;">&nbsp;</td>
+													<td style="font-weight: bold;">700$</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="py-[10px]">
+						<div class="flex flex-col text-semi">
+							<div class="w-full border-[3px] border-primary rounded-[3px] my-[5px]" x-data="{dropdown: false}">
+								<div class="relative overflow-hidden">
+									<div class="w-full flex p-[10px] items-center min-h-[92px] middle:flex-col middle:items-start">
+										<div class="basis-[70%] text">
+											Cremation price at <strong>"Elite"</strong> plan
+											<br> 
+											<br>
+											from 25 000$
+										</div>
+										<div class="basis-[30%] middle:w-full middle:mt-[15px]">
+											<div class="flex justify-center">
+												<button type="button" class="border-b-[1px] border-dashed border-b-white text-white text-shadow-lg middle:bg-secondary middle:py-3 middle:w-full middle:text-shadow-none middle:border-transparent" @click="dropdown = !dropdown">Read More</button>
+											</div>
+										</div>
+									</div>
+									<div class="triangle-big overflow-hidden" :class="dropdown ? 'active' : ''" ></div>
+								</div>
+								<div class="overflow-y-hidden transition-all ease-in-out duration-500" style="height: 0px;" :style="dropdown ? `height: ${$el.scrollHeight}px;` : 'height: 0px;'">
+									<div class="px-[15px] py-[25px] min-w-[700px] overflow-x-auto">
+										<table cellspacing="1" cellpadding="1" style="width: 100%;">
+											<tbody>
+												<tr>
+													<td style="font-weight: bold;">No. n/a</td>
+													<td style="font-weight: bold;">Name of ritual items and services</td>
+													<td style="font-weight: bold;">unit.</td>
+													<td style="font-weight: bold;">price, $</td>
+												</tr>
+												<tr>
+													<td>1</td>
+													<td>A wooden coffin with fabric upholstery</td>
+													<td>1 pc.</td>
+													<td>50$</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>The bedding (interior of the coffin)</td>
+													<td>1 pc.</td>
+													<td>40$</td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>Satin pillow</td>
+													<td>1 pc.</td>
+													<td>20$</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>Coverlet (white or orthodox)</td>
+													<td>1 pc.</td>
+													<td>30$</td>
+												</tr>
+												<tr>
+													<td>5</td>
+													<td>Slippers leather suede.</td>
+													<td>1 pc.</td>
+													<td>10$</td>
+												</tr>
+												<tr>
+													<td>6</td>
+													<td>Agent visit</td>
+													<td>1 pair</td>
+													<td>FREE</td>
+												</tr>
+												<tr>
+													<td>7</td>
+													<td>Delivery of supplies to the SIDS</td>
+													<td>1 pc.</td>
+													<td>120$</td>
+												</tr>
+												<tr>
+													<td>8</td>
+													<td>Order placement</td>
+													<td>1 cond.</td>
+													<td>25$</td>
+												</tr>
+												<tr>
+													<td style="font-weight: bold;">9</td>
+													<td style="font-weight: bold;">Total for section</td>
+													<td style="font-weight: bold;">&nbsp;</td>
+													<td style="font-weight: bold;">295$</td>
+												</tr>
+												<tr>
+													<td>10</td>
+													<td>Transportation (route: morgue - cemetery/crematorium)</td>
+													<td>1 pc.</td>
+													<td>500$</td>
+												</tr>
+												<tr>
+													<td>11</td>
+													<td>Ordering catafal transportation</td>
+													<td>1 pc.</td>
+													<td>200$</td>
+												</tr>
+												<tr>
+													<td style="font-weight: bold;">12</td>
+													<td style="font-weight: bold;">Total for section</td>
+													<td style="font-weight: bold;">&nbsp;</td>
+													<td style="font-weight: bold;">700$</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="text" style="margin-top: 15px; margin-bottom: 20px;">
+			<div class="container">
+				<p>
+					The Spanritual Funeral Agency is open around the clock, seven days a week. Our funeral service specialist will come to your home, hospital or mortuary free of charge. Funeral agents of the funeral home "Ritual" will not be able to relieve your grief, but will help organize the transportation of the deceased to the morgue, funeral and mourning ceremonies according to your customs and beliefs, as well as a memorial meal. They will take care of all the necessary documents, saving you from the heavy formalities.
+				</p>
+			</div>
+		</div>
+		<div class="text" style="margin-top: 50px; margin-bottom: 20px;">
+			<div class="container">
+				<h2>We provide assistance with all types of funeral services:</h2>
+			</div>
+		</div>
+		<div class="services">
+			<div class="container">
+				<div class="flex flex-wrap">
+					<div class="basis-[30%] regular:basis-[40%] semi:basis-full small:mx-0 flex-grow m-[8px] pl-[10px]">
+						<a href="#" class="block p-[10px] text-medisable text-regular regular:text-medium border-solid border-[1px] border-light border-b-[2px] border-b-lightgray rounded-[5px] min-h-[86px] text-center focus:border-medisable hover:border-medisable triangle">Providing a vehicle to transport the body of the deceased from the home to the morgue.</a>
+					</div>
+					<div class="basis-[30%] regular:basis-[40%] semi:basis-full small:mx-0 flex-grow m-[8px] pl-[10px]">
+						<a href="#" class="block p-[10px] text-medisable text-regular regular:text-medium border-solid border-[1px] border-light border-b-[2px] border-b-lightgray rounded-[5px] min-h-[86px] text-center focus:border-medisable hover:border-medisable triangle">Paperwork.</a>
+					</div>
+					<div class="basis-[30%] regular:basis-[40%] semi:basis-full small:mx-0 flex-grow m-[8px] pl-[10px]">
+						<a href="#" class="block p-[10px] text-medisable text-regular regular:text-medium border-solid border-[1px] border-light border-b-[2px] border-b-lightgray rounded-[5px] min-h-[86px] text-center focus:border-medisable hover:border-medisable triangle">Embalming the body.</a>
+					</div>
+					<div class="basis-[30%] regular:basis-[40%] semi:basis-full small:mx-0 flex-grow m-[8px] pl-[10px]">
+						<a href="#" class="block p-[10px] text-medisable text-regular regular:text-medium border-solid border-[1px] border-light border-b-[2px] border-b-lightgray rounded-[5px] min-h-[86px] text-center focus:border-medisable hover:border-medisable triangle">Assistance in organizing funerals</a>
+					</div>
+					<div class="basis-[30%] regular:basis-[40%] semi:basis-full small:mx-0 flex-grow m-[8px] pl-[10px]">
+						<a href="#" class="block p-[10px] text-medisable text-regular regular:text-medium border-solid border-[1px] border-light border-b-[2px] border-b-lightgray rounded-[5px] min-h-[86px] text-center focus:border-medisable hover:border-medisable triangle">Shipment (processing of documents regardless of the location of the deceased).</a>
+					</div>
+					<div class="basis-[30%] regular:basis-[40%] semi:basis-full small:mx-0 flex-grow m-[8px] pl-[10px]">
+						<a href="#" class="block p-[10px] text-medisable text-regular regular:text-medium border-solid border-[1px] border-light border-b-[2px] border-b-lightgray rounded-[5px] min-h-[86px] text-center focus:border-medisable hover:border-medisable triangle">Burying the body, cremation.</a>
+					</div>
+					<div class="basis-[30%] regular:basis-[40%] semi:basis-full small:mx-0 flex-grow m-[8px] pl-[10px]">
+						<a href="#" class="block p-[10px] text-medisable text-regular regular:text-medium border-solid border-[1px] border-light border-b-[2px] border-b-lightgray rounded-[5px] min-h-[86px] text-center focus:border-medisable hover:border-medisable triangle">Sanitizing and decontaminating the apartment.</a>
+					</div>
+					<div class="basis-[30%] regular:basis-[40%] semi:basis-full small:mx-0 flex-grow m-[8px] pl-[10px]">
+						<a href="#" class="block p-[10px] text-medisable text-regular regular:text-medium border-solid border-[1px] border-light border-b-[2px] border-b-lightgray rounded-[5px] min-h-[86px] text-center focus:border-medisable hover:border-medisable triangle">Organizing and hosting a memorial luncheon.</a>
+					</div>
+					<div class="basis-[30%] regular:basis-[40%] semi:basis-full small:mx-0 flex-grow m-[8px] pl-[10px]">
+						<a href="#" class="block p-[10px] text-medisable text-regular regular:text-medium border-solid border-[1px] border-light border-b-[2px] border-b-lightgray rounded-[5px] min-h-[86px] text-center focus:border-medisable hover:border-medisable triangle">Professional live music to accompany the ceremony to bid farewell to the deceased.</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="text" style="margin-top: 50px; margin-bottom: 20px;">
+			<div class="container">
+				<p>A person, when he dies, remains forever in the hearts and memory of his relatives.
+				<br>
+				<strong>We grieve with you...</strong>
+				</p>
+			</div>
+		</div>
+		<div class="text" style="margin-top: 50px; margin-bottom: 20px;">
+			<div class="container">
+				<h2>Q&A</h2>
+			</div>
+		</div>
+		<div class="accordeon">
+			<div class="container">
+				<div class="flex flex-col" x-data="{droped: 0}">
+					<div x-data="{opened: false}" class="mb-[4px]">
+						<button type="button" @click="opened && droped == 0 ? opened = false : opened = true; droped = 0" class="w-full bg-secondary text-white font-bold text-left py-[7px] px-[6px] rounded-[5px]">How do I order funeral services from your company?</button>
+						<div class="overflow-hidden overflow-y-hidden transition-all ease-in-out duration-300"style="height: 0px;" :style="droped == 0 && opened ? `height: ${$el.scrollHeight}px;` : 'height: 0px;'">
+							<div class="shadow-2ir -z-1 px-[4px] py-[6px] rounded-[3px]">
+								To call a funeral agent, contact us at our hotline number: (495) 799-8378
+							</div>
+						</div>
+					</div>
+					<div x-data="{opened: false}" class="mb-[4px]">
+						<button type="button" @click="opened && droped == 1 ? opened = false : opened = true; droped = 1" class="w-full bg-secondary text-white font-bold text-left py-[7px] px-[6px] rounded-[5px]">What services does your funeral agency offer?</button>
+
+						<div class="overflow-hidden overflow-y-hidden transition-all ease-in-out duration-300"style="height: 0px;" :style="droped == 1 && opened ? `height: ${$el.scrollHeight}px;` : 'height: 0px;'">
+							<div class="shadow-2ir -z-1 px-[4px] py-[6px] rounded-[3px]">
+								At the rate "Budget" you can order delivery of a coffin, bedding and ritual accessories, transportation of the cargo to the morgue, as well as registration of the order.
+							</div>
+						</div>
+					</div>
+					<div x-data="{opened: false}" class="mb-[4px]">
+						<button type="button" @click="opened && droped == 2 ? opened = false : opened = true; droped = 2" class="w-full bg-secondary text-white font-bold text-left py-[7px] px-[6px] rounded-[5px]">When is the funeral agent coming?</button>
+
+						<div class="overflow-hidden overflow-y-hidden transition-all ease-in-out duration-300"style="height: 0px;" :style="droped == 2 && opened ? `height: ${$el.scrollHeight}px;` : 'height: 0px;'">
+							<div class="shadow-2ir -z-1 px-[4px] py-[6px] rounded-[3px]">
+								Our technician will arrive at the customer's address 30-40 minutes after the call.
+							</div>
+						</div>
+					</div>
+					<div x-data="{opened: false}" class="mb-[4px]">
+						<button type="button" @click="opened && droped == 3 ? opened = false : opened = true; droped = 3" class="w-full bg-secondary text-white font-bold text-left py-[7px] px-[6px] rounded-[5px]">What documents do the relatives of the deceased need to prepare?</button>
+
+						<div class="overflow-hidden overflow-y-hidden transition-all ease-in-out duration-300"style="height: 0px;" :style="droped == 3 && opened ? `height: ${$el.scrollHeight}px;` : 'height: 0px;'">
+							<div class="shadow-2ir -z-1 px-[4px] py-[6px] rounded-[3px]">
+								The funeral agent will request the passport of the deceased, and if this document is not available - an extract from the house book.
+							</div>
+						</div>
+					</div>
+					<div x-data="{opened: false}" class="mb-[4px]">
+						<button type="button" @click="opened && droped == 4 ? opened = false : opened = true; droped = 4" class="w-full bg-secondary text-white font-bold text-left py-[7px] px-[6px] rounded-[5px]">What services are included in the organization and conduct of funerals in Moscow?</button>
+
+						<div class="overflow-hidden overflow-y-hidden transition-all ease-in-out duration-300"style="height: 0px;" :style="droped == 4 && opened ? `height: ${$el.scrollHeight}px;` : 'height: 0px;'">
+							<div class="shadow-2ir -z-1 px-[4px] py-[6px] rounded-[3px]">
+								We offer preparation of a person's body for burial, transportation of the coffin, preparation of the grave, holding a wake, collection of documents.
+							</div>
+						</div>
+					</div>
+					<div x-data="{opened: false}" class="mb-[4px]">
+						<button type="button" @click="opened && droped == 5 ? opened = false : opened = true; droped = 5" class="w-full bg-secondary text-white font-bold text-left py-[7px] px-[6px] rounded-[5px]">Can I order a body cremation from you?</button>
+
+						<div class="overflow-hidden overflow-y-hidden transition-all ease-in-out duration-300"style="height: 0px;" :style="droped == 5 && opened ? `height: ${$el.scrollHeight}px;` : 'height: 0px;'">
+							<div class="shadow-2ir -z-1 px-[4px] py-[6px] rounded-[3px]">
+								Yes, at the request of a relative of the deceased or the funeral director it is possible to organize cremation of the body - for this purpose apply to one of the crematoriums in Moscow.
+							</div>
+						</div>
+					</div>
+					<div x-data="{opened: false}" class="mb-[4px]">
+						<button type="button" @click="opened && droped == 6 ? opened = false : opened = true; droped = 6" class="w-full bg-secondary text-white font-bold text-left py-[7px] px-[6px] rounded-[5px]">How is the cost of services calculated?</button>
+
+						<div class="overflow-hidden overflow-y-hidden transition-all ease-in-out duration-300"style="height: 0px;" :style="droped == 6 && opened ? `height: ${$el.scrollHeight}px;` : 'height: 0px;'">
+							<div class="shadow-2ir -z-1 px-[4px] py-[6px] rounded-[3px]">
+								The cost of organizing a funeral depends on the amount of services you order, ritual accessories, coffin and funeral paraphernalia (cross on the grave, etc.).
+							</div>
+						</div>
+					</div>
+					<div x-data="{opened: false}" class="mb-[4px]">
+						<button type="button" @click="opened && droped == 7 ? opened = false : opened = true; droped = 7" class="w-full bg-secondary text-white font-bold text-left py-[7px] px-[6px] rounded-[5px]">Will you be able to fulfill the last will of the deceased, who, while alive, composed the ritual of his own burial?</button>
+
+						<div class="overflow-hidden overflow-y-hidden transition-all ease-in-out duration-300"style="height: 0px;" :style="droped == 7 && opened ? `height: ${$el.scrollHeight}px;` : 'height: 0px;'">
+							<div class="shadow-2ir -z-1 px-[4px] py-[6px] rounded-[3px]">
+								Yes, we honor people's wishes during their lifetime.
+							</div>
+						</div>
+					</div>
+					<div x-data="{opened: false}" class="mb-[4px]">
+						<button type="button" @click="opened && droped == 8 ? opened = false : opened = true; droped = 8" class="w-full bg-secondary text-white font-bold text-left py-[7px] px-[6px] rounded-[5px]">What Moscow morgues does your funeral home cooperate with?</button>
+
+						<div class="overflow-hidden overflow-y-hidden transition-all ease-in-out duration-300"style="height: 0px;" :style="droped == 8 && opened ? `height: ${$el.scrollHeight}px;` : 'height: 0px;'">
+							<div class="shadow-2ir -z-1 px-[4px] py-[6px] rounded-[3px]">
+								We cooperate with all morgues located in Moscow and Moscow region.
+							</div>
+						</div>
+					</div>
+					<div x-data="{opened: false}" class="mb-[4px]">
+						<button type="button" @click="opened && droped == 9 ? opened = false : opened = true; droped = 9" class="w-full bg-secondary text-white font-bold text-left py-[7px] px-[6px] rounded-[5px]">Will we be able to contact you if our relative's body measurements are non-standard</button>
+
+						<div class="overflow-hidden overflow-y-hidden transition-all ease-in-out duration-300"style="height: 0px;" :style="droped == 9 && opened ? `height: ${$el.scrollHeight}px;` : 'height: 0px;'">
+							<div class="shadow-2ir -z-1 px-[4px] py-[6px] rounded-[3px]">
+								Yes, in which case we will provide you with all the necessary funeral supplies.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="text" style="margin-top: 50px; margin-bottom: 20px;">
+			<div class="container">
+				<p>Ritual service "Spanritual" - is the main link in the organization of funerals, taking into account the registration of a full package of documents including a death certificate and the provision of necessary ritual goods and services for burial - a coffin, ritual accessories (wreaths, ribbons, crosses, costumes (ritual clothing), plates, photographs and many other accessories), cataphal transport (bus).
+				</p>
+				<p style="margin-top: 15px;">
+					The basic financial cost of a funeral is made up of three components:
+					<br> <br>
+					<ul>
+						<li>Services Ritual Service «Spanritual»</li>
+						<li>Morgue Services</li>
+						<li>Graveyard Services</li>
+					</ul>
+				</p>
+			</div>
+		</div>
+		<div class="archive" style="margin-top: 25px; margin-bottom: 35px;" x-data="{tabindex: 0, maxindex: 4}">
+			<div class="container bg-white p-[10px] pb-0">
+				<div class="flex justify-center flex-wrap">
+					<button type="button" class="inline-block py-[15px] px-[20px] uppercase text-medium border-transparent border-[1px] mr-[3px] min-w-[190px] medium:min-w-0 medium:w-full mb-[5px] middle:w-full bg-deadlight" :class="tabindex === 0 ? 'bg-secondary text-white' : 'bg-deadlight hover:bg-cyanid hover:border-solid hover:border-pepel hover:text-pepel text-slim'" @click="tabindex = 0">Cemeteries</button>
+					<button type="button" class="inline-block py-[15px] px-[20px] uppercase text-medium border-transparent border-[1px] mr-[3px] min-w-[190px] medium:min-w-0 medium:w-full mb-[5px] middle:w-full bg-deadlight" :class="tabindex === 1 ? 'bg-secondary text-white' : 'bg-deadlight hover:bg-cyanid hover:border-solid hover:border-pepel hover:text-pepel text-slim'" @click="tabindex = 1">Morgues</button>
+					<button type="button" class="inline-block py-[15px] px-[20px] uppercase text-medium border-transparent border-[1px] mr-[3px] min-w-[190px] medium:min-w-0 medium:w-full mb-[5px] middle:w-full bg-deadlight" :class="tabindex === 2 ? 'bg-secondary text-white' : 'bg-deadlight hover:bg-cyanid hover:border-solid hover:border-pepel hover:text-pepel text-slim'" @click="tabindex = 2">Crematories</button>
+					<button type="button" class="inline-block py-[15px] px-[20px] uppercase text-medium border-transparent border-[1px] mr-[3px] min-w-[190px] medium:min-w-0 medium:w-full mb-[5px] middle:w-full bg-deadlight" :class="tabindex === 3 ? 'bg-secondary text-white' : 'bg-deadlight hover:bg-cyanid hover:border-solid hover:border-pepel hover:text-pepel text-slim'" @click="tabindex = 3">Registration office</button>
+					<button type="button" class="inline-block py-[15px] px-[20px] uppercase text-medium border-transparent border-[1px] mr-[3px] min-w-[190px] medium:min-w-0 medium:w-full mb-[5px] middle:w-full bg-deadlight" :class="tabindex === 4 ? 'bg-secondary text-white' : 'bg-deadlight hover:bg-cyanid hover:border-solid hover:border-pepel hover:text-pepel text-slim'" @click="tabindex = 4">Neighborhoods</button>
+				</div>
+				<div x-show="tabindex === 0" x-cloak>
+					<div class="relative mt-[15px] mb-[100px]" x-data="{scrolling: true, screened: false}">
+						<div @click="if(scrolling) screened = true" id="hi" class="transition-all ease-in-out duration-300" :class="scrolling ? 'max-h-[350px] overflow-y-hidden' : ''" :style="screened && scrolling ? `max-height: ${$el.scrollHeight}px !important;` : ''">
+							<div class="text px-[20px] pb-[25px]">
+								<h3>Specialists of our office will help to choose a place in the cemetery and calculate the cost of funeral services.</h3>
+								<p>А</p>
+								<ul class="lister">
+									<li><a href="#">Alekseevskoye cemetery</a></li>
+									<li><a href="#">Altufievskoye cemetery</a></li>
+									<li><a href="#">Armenian cemetery</a></li>
+									<li><a href="#">Alabushevskoye ce</a></li>
+								</ul>
+								<p>B</p>
+								<ul class="lister">
+									<li><a href="#">Babushkinskoe cemetery</a></li>
+									<li><a href="#">Borisovskoye cemetery</a></li>
+									<li><a href="#">Businovskoye cemetery</a></li>
+									<li><a href="#">Butovo cemetery</a></li>
+								</ul>
+								<p>V</p>
+								<ul class="lister">
+									<li><a href="#">Vagankovskoye cemetery</a></li>
+									<li><a href="#">Vvedenskoye (German) cemetery</a></li>
+									<li><a href="#">Vostryakovo cemetery</a></li>
+									<li><a href="#">Vladykinskoe cemetery</a></li>
+								</ul>
+								<p>G</p>
+								<ul class="lister">
+									<li><a href="#">Golovinsky cemetery</a></li>
+									<li><a href="#">Golyanovo cemetery</a></li>
+								</ul>
+								<p>D</p>
+								<ul class="lister">
+									<li><a href="#">Danilovsky cemetery</a></li>
+									<li><a href="#">Domodedovo cemetery</a></li>
+								</ul>
+								<p>I</p>
+								<ul class="lister">
+									<li><a href="#">Ivanovskoye cemetery</a></li>
+								</ul>
+								<p>K</p>
+								<ul class="lister">
+									<li><a href="#">Kalitnikovskoye cemetery</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="absolute w-full text-center" :class="!screened ? ' bottom-0 spread-shadow' : 'bottom-[-60px]'" x-show="scrolling" x-cloak>
+							<button type="button" @click.prevent="screened = !screened" class="w-[45px] h-[45px] mt-[50px]" class="inline-block" :class="screened ? 'rotate-180' : ''" style="background: url(data:image/png;base64,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) no-repeat; background-size: 100% 100%;"></button>
+						</div>
+					</div>
+				</div>
+				<div x-show="tabindex === 1" x-cloak>
+					<div class="relative mt-[15px] mb-[100px]" x-data="{scrolling: true, screened: false}">
+						<div @click="if(scrolling) screened = true" id="hi" class="transition-all ease-in-out duration-300" :class="scrolling ? 'max-h-[350px] overflow-y-hidden' : ''" :style="screened && scrolling ? `max-height: ${$el.scrollHeight}px !important;` : ''">
+							<div class="text px-[20px] pb-[25px]">
+								<h3>Specialists of our office will help to choose a place in the cemetery and calculate the cost of funeral services.</h3>
+								<p>А</p>
+								<ul class="lister">
+									<li><a href="#">Alekseevskoye cemetery</a></li>
+									<li><a href="#">Altufievskoye cemetery</a></li>
+									<li><a href="#">Armenian cemetery</a></li>
+									<li><a href="#">Alabushevskoye ce</a></li>
+								</ul>
+								<p>B</p>
+								<ul class="lister">
+									<li><a href="#">Babushkinskoe cemetery</a></li>
+									<li><a href="#">Borisovskoye cemetery</a></li>
+									<li><a href="#">Businovskoye cemetery</a></li>
+									<li><a href="#">Butovo cemetery</a></li>
+								</ul>
+								<p>V</p>
+								<ul class="lister">
+									<li><a href="#">Vagankovskoye cemetery</a></li>
+									<li><a href="#">Vvedenskoye (German) cemetery</a></li>
+									<li><a href="#">Vostryakovo cemetery</a></li>
+									<li><a href="#">Vladykinskoe cemetery</a></li>
+								</ul>
+								<p>G</p>
+								<ul class="lister">
+									<li><a href="#">Golovinsky cemetery</a></li>
+									<li><a href="#">Golyanovo cemetery</a></li>
+								</ul>
+								<p>D</p>
+								<ul class="lister">
+									<li><a href="#">Danilovsky cemetery</a></li>
+									<li><a href="#">Domodedovo cemetery</a></li>
+								</ul>
+								<p>I</p>
+								<ul class="lister">
+									<li><a href="#">Ivanovskoye cemetery</a></li>
+								</ul>
+								<p>K</p>
+								<ul class="lister">
+									<li><a href="#">Kalitnikovskoye cemetery</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="absolute w-full text-center" :class="!screened ? ' bottom-0 spread-shadow' : 'bottom-[-60px]'" x-show="scrolling" x-cloak>
+							<button type="button" @click.prevent="screened = !screened" class="w-[45px] h-[45px] mt-[50px]" class="inline-block" :class="screened ? 'rotate-180' : ''" style="background: url(data:image/png;base64,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) no-repeat; background-size: 100% 100%;"></button>
+						</div>
+					</div>
+				</div>
+				<div x-show="tabindex === 2" x-cloak>
+					<div class="relative mt-[15px] mb-[100px]" x-data="{scrolling: true, screened: false}">
+						<div @click="if(scrolling) screened = true" id="hi" class="transition-all ease-in-out duration-300" :class="scrolling ? 'max-h-[350px] overflow-y-hidden' : ''" :style="screened && scrolling ? `max-height: ${$el.scrollHeight}px !important;` : ''">
+							<div class="text px-[20px] pb-[25px]">
+								<h3>Specialists of our office will help to choose a place in the cemetery and calculate the cost of funeral services.</h3>
+								<p>А</p>
+								<ul class="lister">
+									<li><a href="#">Alekseevskoye cemetery</a></li>
+									<li><a href="#">Altufievskoye cemetery</a></li>
+									<li><a href="#">Armenian cemetery</a></li>
+									<li><a href="#">Alabushevskoye ce</a></li>
+								</ul>
+								<p>B</p>
+								<ul class="lister">
+									<li><a href="#">Babushkinskoe cemetery</a></li>
+									<li><a href="#">Borisovskoye cemetery</a></li>
+									<li><a href="#">Businovskoye cemetery</a></li>
+									<li><a href="#">Butovo cemetery</a></li>
+								</ul>
+								<p>V</p>
+								<ul class="lister">
+									<li><a href="#">Vagankovskoye cemetery</a></li>
+									<li><a href="#">Vvedenskoye (German) cemetery</a></li>
+									<li><a href="#">Vostryakovo cemetery</a></li>
+									<li><a href="#">Vladykinskoe cemetery</a></li>
+								</ul>
+								<p>G</p>
+								<ul class="lister">
+									<li><a href="#">Golovinsky cemetery</a></li>
+									<li><a href="#">Golyanovo cemetery</a></li>
+								</ul>
+								<p>D</p>
+								<ul class="lister">
+									<li><a href="#">Danilovsky cemetery</a></li>
+									<li><a href="#">Domodedovo cemetery</a></li>
+								</ul>
+								<p>I</p>
+								<ul class="lister">
+									<li><a href="#">Ivanovskoye cemetery</a></li>
+								</ul>
+								<p>K</p>
+								<ul class="lister">
+									<li><a href="#">Kalitnikovskoye cemetery</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="absolute w-full text-center" :class="!screened ? ' bottom-0 spread-shadow' : 'bottom-[-60px]'" x-show="scrolling" x-cloak>
+							<button type="button" @click.prevent="screened = !screened" class="w-[45px] h-[45px] mt-[50px]" class="inline-block" :class="screened ? 'rotate-180' : ''" style="background: url(data:image/png;base64,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) no-repeat; background-size: 100% 100%;"></button>
+						</div>
+					</div>
+				</div>
+				<div x-show="tabindex === 3" x-cloak>
+					<div class="relative mt-[15px] mb-[100px]" x-data="{scrolling: true, screened: false}">
+						<div @click="if(scrolling) screened = true" id="hi" class="transition-all ease-in-out duration-300" :class="scrolling ? 'max-h-[350px] overflow-y-hidden' : ''" :style="screened && scrolling ? `max-height: ${$el.scrollHeight}px !important;` : ''">
+							<div class="text px-[20px] pb-[25px]">
+								<h3>Specialists of our office will help to choose a place in the cemetery and calculate the cost of funeral services.</h3>
+								<p>А</p>
+								<ul class="lister">
+									<li><a href="#">Alekseevskoye cemetery</a></li>
+									<li><a href="#">Altufievskoye cemetery</a></li>
+									<li><a href="#">Armenian cemetery</a></li>
+									<li><a href="#">Alabushevskoye ce</a></li>
+								</ul>
+								<p>B</p>
+								<ul class="lister">
+									<li><a href="#">Babushkinskoe cemetery</a></li>
+									<li><a href="#">Borisovskoye cemetery</a></li>
+									<li><a href="#">Businovskoye cemetery</a></li>
+									<li><a href="#">Butovo cemetery</a></li>
+								</ul>
+								<p>V</p>
+								<ul class="lister">
+									<li><a href="#">Vagankovskoye cemetery</a></li>
+									<li><a href="#">Vvedenskoye (German) cemetery</a></li>
+									<li><a href="#">Vostryakovo cemetery</a></li>
+									<li><a href="#">Vladykinskoe cemetery</a></li>
+								</ul>
+								<p>G</p>
+								<ul class="lister">
+									<li><a href="#">Golovinsky cemetery</a></li>
+									<li><a href="#">Golyanovo cemetery</a></li>
+								</ul>
+								<p>D</p>
+								<ul class="lister">
+									<li><a href="#">Danilovsky cemetery</a></li>
+									<li><a href="#">Domodedovo cemetery</a></li>
+								</ul>
+								<p>I</p>
+								<ul class="lister">
+									<li><a href="#">Ivanovskoye cemetery</a></li>
+								</ul>
+								<p>K</p>
+								<ul class="lister">
+									<li><a href="#">Kalitnikovskoye cemetery</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="absolute w-full text-center" :class="!screened ? ' bottom-0 spread-shadow' : 'bottom-[-60px]'" x-show="scrolling" x-cloak>
+							<button type="button" @click.prevent="screened = !screened" class="w-[45px] h-[45px] mt-[50px]" class="inline-block" :class="screened ? 'rotate-180' : ''" style="background: url(data:image/png;base64,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) no-repeat; background-size: 100% 100%;"></button>
+						</div>
+					</div>
+				</div>
+				<div x-show="tabindex === 4" x-cloak>
+					<div class="relative mt-[15px] mb-[100px]" x-data="{scrolling: true, screened: false}">
+						<div @click="if(scrolling) screened = true" id="hi" class="transition-all ease-in-out duration-300" :class="scrolling ? 'max-h-[350px] overflow-y-hidden' : ''" :style="screened && scrolling ? `max-height: ${$el.scrollHeight}px !important;` : ''">
+							<div class="text px-[20px] pb-[25px]">
+								<h3>Specialists of our office will help to choose a place in the cemetery and calculate the cost of funeral services.</h3>
+								<p>А</p>
+								<ul class="lister">
+									<li><a href="#">Alekseevskoye cemetery</a></li>
+									<li><a href="#">Altufievskoye cemetery</a></li>
+									<li><a href="#">Armenian cemetery</a></li>
+									<li><a href="#">Alabushevskoye ce</a></li>
+								</ul>
+								<p>B</p>
+								<ul class="lister">
+									<li><a href="#">Babushkinskoe cemetery</a></li>
+									<li><a href="#">Borisovskoye cemetery</a></li>
+									<li><a href="#">Businovskoye cemetery</a></li>
+									<li><a href="#">Butovo cemetery</a></li>
+								</ul>
+								<p>V</p>
+								<ul class="lister">
+									<li><a href="#">Vagankovskoye cemetery</a></li>
+									<li><a href="#">Vvedenskoye (German) cemetery</a></li>
+									<li><a href="#">Vostryakovo cemetery</a></li>
+									<li><a href="#">Vladykinskoe cemetery</a></li>
+								</ul>
+								<p>G</p>
+								<ul class="lister">
+									<li><a href="#">Golovinsky cemetery</a></li>
+									<li><a href="#">Golyanovo cemetery</a></li>
+								</ul>
+								<p>D</p>
+								<ul class="lister">
+									<li><a href="#">Danilovsky cemetery</a></li>
+									<li><a href="#">Domodedovo cemetery</a></li>
+								</ul>
+								<p>I</p>
+								<ul class="lister">
+									<li><a href="#">Ivanovskoye cemetery</a></li>
+								</ul>
+								<p>K</p>
+								<ul class="lister">
+									<li><a href="#">Kalitnikovskoye cemetery</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="absolute w-full text-center" :class="!screened ? ' bottom-0 spread-shadow' : 'bottom-[-60px]'" x-show="scrolling" x-cloak>
+							<button type="button" @click.prevent="screened = !screened" class="w-[45px] h-[45px] mt-[50px]" class="inline-block" :class="screened ? 'rotate-180' : ''" style="background: url(data:image/png;base64,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) no-repeat; background-size: 100% 100%;"></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="text" style="margin-top: 50px; margin-bottom: 20px;">
+			<div class="container">
+				<h2>Funeral goods</h2>
+			</div>
+		</div>
+		<div class="catalog" style="margin-top: 25px; margin-bottom: 35px;">
+			<div class="container">
+				<div class="flex medium:justify-center flex-wrap">
+					<a href="#" class="col-ms p-[5px] regular:p-[15px] rounded-[5px] border-[1px] border-solid border-lightgray bg-smoothlighty hover:border-sable">
+						<p class="mt-[4px] mb-[15px] text-semi text-dark px-[15px]">Coffins</p>
+						<div class="w-full flex justify-center p-[15px] py-[25px]">
+							<img src="./assets/img/coffin.png" class="hover:scale-110 transition-all duration-300 ease-in-out w-[150px] h-[150px]" alt="">
+						</div>
+					</a>
+					<a href="#" class="col-ms p-[5px] regular:p-[15px] rounded-[5px] border-[1px] border-solid border-lightgray bg-smoothlighty hover:border-sable">
+						<p class="mt-[4px] mb-[15px] text-semi text-dark px-[15px]">Bedding, pillows, bedspreads</p>
+						<div class="w-full flex justify-center p-[15px] py-[25px]">
+							<img src="./assets/img/pillow.png" class="hover:scale-110 transition-all duration-300 ease-in-out w-[150px] h-[150px]" alt="">
+						</div>
+					</a>
+					<a href="#" class="col-ms p-[5px] regular:p-[15px] rounded-[5px] border-[1px] border-solid border-lightgray bg-smoothlighty hover:border-sable">
+						<p class="mt-[4px] mb-[15px] text-semi text-dark px-[15px]">Crosses and plaques</p>
+						<div class="w-full flex justify-center p-[15px] py-[25px]">
+							<img src="./assets/img/crosse.webp" class="hover:scale-110 transition-all duration-300 ease-in-out w-[150px] h-[150px]" alt="">
+						</div>
+					</a>
+					<a href="#" class="col-ms p-[5px] regular:p-[15px] rounded-[5px] border-[1px] border-solid border-lightgray bg-smoothlighty hover:border-sable">
+						<p class="mt-[4px] mb-[15px] text-semi text-dark px-[15px]">Wreaths, baskets, memorial branches</p>
+						<div class="w-full flex justify-center p-[15px] py-[25px]">
+							<img src="./assets/img/wreath.png" class="hover:scale-110 transition-all duration-300 ease-in-out w-[150px] h-[150px]" alt="">
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="tags" style="margin-top: 50px; margin-bottom: 20px;">
+			<div class="container">
+				<a href="#" class="inline-block px-3 py-2 hover:bg-secondary hover:text-white focus:bg-secondary focus:text-white transition">funeral services Balashikha</a>
+				<a href="#" class="inline-block px-3 py-2 hover:bg-secondary hover:text-white focus:bg-secondary focus:text-white transition">funeral agents Balashikha</a>
+				<a href="#" class="inline-block px-3 py-2 hover:bg-secondary hover:text-white focus:bg-secondary focus:text-white transition">funeral organization Balashikha</a>
+				<a href="#" class="inline-block px-3 py-2 hover:bg-secondary hover:text-white focus:bg-secondary focus:text-white transition">funeral home Balashikha</a>
+				<a href="#" class="inline-block px-3 py-2 hover:bg-secondary hover:text-white focus:bg-secondary focus:text-white transition">funeral paraphernalia store Balashikha</a>
+			</div>
+		</div>
+	</main>
+	<footer class="footer w-full bg-gray text-white" style="margin-top: 50px;">
+		<div class="container">
+			<div class="flex regular:flex-col regular:items-center border-b-[1px] border-solid border-b-light py-[25px]">
+				<a href="/" class="w-[27%] regular:w-auto">
+					<img src="./assets/img/logo.png" alt="">
+				</a>
+				<div class="flex semi:flex-wrap basis-full regular:w-full regular:mt-10 justify-around">
+					<div class="flex flex-col semi:basis-full semi:items-center semi:mb-5">
+						<p class="font-bold semi:text-large">Menu</p>
+						<ul class="flex flex-col">
+							<li class="semi:text-center"><a href="#" class="hover:underline focus:underline text-light semi:text-semi">Home</a></li>
+							<li class="semi:text-center"><a href="#" class="hover:underline focus:underline text-light semi:text-semi">Services & prices</a></li>
+							<li class="semi:text-center"><a href="#" class="hover:underline focus:underline text-light semi:text-semi">Funeral goods</a></li>
+							<li class="semi:text-center"><a href="#" class="hover:underline focus:underline text-light semi:text-semi">Info</a></li>
+							<li class="semi:text-center"><a href="#" class="hover:underline focus:underline text-light semi:text-semi">Specials</a></li>
+							<li class="semi:text-center"><a href="#" class="hover:underline focus:underline text-light semi:text-semi">Contacts</a></li>
+						</ul>
+					</div>
+					<div class="flex flex-col semi:basis-full semi:items-center semi:mb-5">
+						<p class="font-bold semi:text-large">Services and prices</p>
+						<ul class="flex flex-col">
+							<li class="semi:text-center"><a href="#" class="hover:underline focus:underline text-light semi:text-semi">Essential services</a></li>
+							<li class="semi:text-center"><a href="#" class="hover:underline focus:underline text-light semi:text-semi">Funeral arrangements</a></li>
+							<li class="semi:text-center"><a href="#" class="hover:underline focus:underline text-light semi:text-semi">Shipment</a></li>
+							<li class="semi:text-center"><a href="#" class="hover:underline focus:underline text-light semi:text-semi">Decontamination</a></li>
+							<li class="semi:text-center"><a href="#" class="hover:underline focus:underline text-light semi:text-semi">Plans</a></li>
+						</ul>
+					</div>
+					<div class="flex flex-col semi:basis-full semi:items-center semi:mb-5">
+						<p class="font-bold semi:text-large">Funeral goods</p>
+						<ul class="flex flex-col">
+							<li class="semi:text-center"><a href="#" class="hover:underline focus:underline text-light semi:text-semi">Coffins</a></li>
+							<li class="semi:text-center"><a href="#" class="hover:underline focus:underline text-light semi:text-semi">Bedding</a></li>
+							<li class="semi:text-center"><a href="#" class="hover:underline focus:underline text-light semi:text-semi">Pillows</a></li>
+							<li class="semi:text-center"><a href="#" class="hover:underline focus:underline text-light semi:text-semi">Bedspreads</a></li>
+							<li class="semi:text-center"><a href="#" class="hover:underline focus:underline text-light semi:text-semi">Crosses</a></li>
+							<li class="semi:text-center"><a href="#" class="hover:underline focus:underline text-light semi:text-semi">Wreaths</a></li>
+							<li class="semi:text-center"><a href="#" class="hover:underline focus:underline text-light semi:text-semi">Memorial branches</a></li>
+
+						</ul>
+					</div>
+					<div class="flex flex-col semi:basis-full semi:items-center semi:mb-5">
+						<p class="font-bold semi:text-large">Contacts</p>
+						<ul class="flex flex-col">
+							<li class="semi:text-center"><a href="#" class="hover:underline focus:underline text-light semi:text-semi">About us</a></li>
+							<li class="semi:text-center"><a href="#" class="hover:underline focus:underline text-light semi:text-semi">Hotline</a></li>
+							<li class="semi:text-center"><a href="#" class="hover:underline focus:underline text-light semi:text-semi">Email</a></li>
+							<li class="semi:text-center"><a href="#" class="hover:underline focus:underline text-light semi:text-semi">We're on a map</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="flex middle:flex-col middle:items-center justify-between py-[25px]">
+				<div class="text-center">
+					<a href="tel:4957998378" class="block text-semi text-light hover:text-white focus:text-white">(495) 799-8378</a>
+					<div>Round-the-clock hotline</div>
+				</div>
+				<div class="text-leftmi middle:text-center">
+					<div>Useful information:</div>
+					<a href="#" class="block text-light hover:text-white focus:text-white hover:underline focus:underline">info@spanritual.com</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

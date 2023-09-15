@@ -1,0 +1,57 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./dist/**/*.{html,js}"],
+  important: true,
+  theme: {
+        colors: {
+            primary: "rgba(22, 33, 45, 1)",
+            primarya: "rgba(22, 33, 45, 0.84)",
+            secondary: "#36587c",
+            gray: "#36363F",
+            lightgray: "#8e8e8e",
+            slight: "#e3e3e3",
+            slate: "#7d7d7d",
+            slim: "#777",
+            light: "#d6d6d6",
+            deadlight: "#F2F6F9",
+            smoothlight: "#FDFDFD",
+            smoothlighty: "rgba(253, 253, 253, 0.5)",
+            sable: "#333",
+            medisable: "#303f50",
+            dark: "#111417",
+            black: "#000",
+            pepel: "#16212d",
+            white: "#fff",
+            transparent: "transparent",
+            red: "#B00",
+            cyanid: "#ced7e0",
+            temny: "rgba(0,0,0,0.6)",
+        },
+        backgroundSize: {
+	      'h-full': 'auto 100%',
+	    },
+        screens: {
+            regular: { max: "720px" },
+        	semi: { max: "572px" },
+            medium: { max: "480px" },
+        	middle: { max: "400px" },
+        	small: { max: "320px" },
+        },
+        fontFamily: {
+            ptsans: ["PT Sans", "Verdana", "Geneva", "Arial", "Helvetica", "sans-serif"],
+        },
+        fontSize: {
+            regular: ["14px", "150%"],
+            medium: "16px",
+            middle: ["17px", "150%"],
+            semi: "15pt",
+            large: ["24px", "100%"],
+            big: "24pt",
+        },
+        boxShadow: {
+        	"1lr": "0 0 2px 1px #c7c7c7",
+            "2ir": "inset 0 0 0 1px #ccc",
+        },
+    },
+  plugins: [],
+}
